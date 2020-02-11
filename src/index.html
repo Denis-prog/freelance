@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<title>Freelance</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+	<main>
+		<div class="container py-5 text-center">
+			<div id="block-choice">
+				<img class="d-block mx-auto mb-4" src="./assets/img/logo.png" alt="логотип компании">
+				<p class="lead text-muted">Добро пожаловать на нашу фриланс биржу</p>
+				<p class="lead text-muted">Если вы заказчик то вы можете заказать проект</p>
+				<p class="lead text-muted">Если вы фрилансер то вы всегда найдете у нас проект по силам</p>
+				<p class="mt-5">
+					<a href="#" id="customer" class="btn btn-primary my-3 px-4 py-2">Заказчик</a>
+					<a href="#" id="freelancer" class="btn btn-secondary my-3 px-4 py-2">Фрилансер</a>
+				</p>
+			</div>
+			<!--meanie - заказчик-->
+			<div id="block-customer">
+				<div class="col-4 mx-auto">
+					<img class="d-block mb-4 img-fluid" src="./assets/img/logo.png" alt="логотип компании">
+				</div>
+				<div class="col">
+					<label for="form-customer-input-title" class="cursor-pointer mb-3 h4">Оставьте заявку</label>
+					<form id="form-customer">
+						<div class="mb-3 position-relative">
+							<div class="fill-input-indicator fill-input-title-indicator position-absolute">
+							</div>
+							<div>
+								<input type="text" class="form-control pr-5" id="form-customer-input-title" name="title"
+									placeholder="краткое описание задачи(не более 20 символов)" autocomplete="off"
+									data-current-field="title" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 mb-3">
+								<label for="firstName" class="cursor-pointer">Ваше имя</label>
+								<div class="position-relative">
+									<div
+										class="fill-input-indicator fill-input-description-indicator position-absolute">
+									</div>
+									<div>
+										<input type="text" class="form-control pr-5" id="firstName" name="firstName"
+											placeholder="ваше имя" autocomplete="off"
+											data-current-field="nameCustomer" />
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 mb-3">
+								<label for="email" class="cursor-pointer">Email</label>
+								<div class="position-relative cursor-pointer">
+									<div>
+										<input type="text" class="form-control pr-5" id="email" name="email"
+											placeholder="you@mail.com" data-current-field="email" autocomplete="off" />
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 mb-3">
+								<label for="phone" class="cursor-pointer">Номер телефона <span
+										class="text-muted">(optional)</span></label>
+								<div class="position-relative">
+									<div>
+										<input type="text" class="form-control pr-5" id="phone" name="phone"
+											autocomplete="off" placeholder="в формате +79XXXXXXXXX"
+											data-current-field="phone">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mb-3 position-relative">
+							<label for="form-customer-input-description" class="cursor-pointer">Описание</label>
+							<div class="position-relative">
+								<div class="fill-input-indicator fill-input-description-indicator position-absolute">
+								</div>
+								<div>
+									<textarea placeholder="подробное описание задачи(не боллее 500 символов)"
+										class="form-control pr-5" name="description" rows="4"
+										id="form-customer-input-description" autocomplete="off"
+										data-current-field="description"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 mb-3">
+								<div class="mb-3">
+									<label for="amount" class="cursor-pointer">Предложенная сумма</label>
+									<div class="position-relative">
+										<div>
+											<input type="text" class="form-control pr-5" id="amount" name="amount"
+												data-current-field="amount" data-is-dump="true" autocomplete="off" />
+										</div>
+									</div>
+								</div>
+								<div class="d-flex justify-content-center" id="radio-currency-block">
+									<label class="currency">
+										<input class="currency__radio" type="radio" name="currency" id="bucks"
+											value="bucks" data-locale-parameter="en" data-currency-parameter="usd" />
+										<span class="img__radio img__radio_bucks"></span>
+									</label>
+									<label class="currency">
+										<input class="currency__radio" type="radio" name="currency" id="ruble"
+											value="ruble" checked data-locale-parameter="ru"
+											data-currency-parameter="rub" />
+										<span class="img__radio img__radio_ruble"></span>
+									</label>
+								</div>
+							</div>
+							<div class="col-md-6 mb-3">
+								<div class="mb-3">
+									<label for="deadline" class="cursor-pointer">Срок выполнения до:</label>
+									<div class="position-relative">
+										<div>
+											<input type="date" id="deadline" class="form-control pr-5" name="deadline"
+												required data-current-field="date" />
+										</div>
+									</div>
+								</div>
+								<button class="btn btn-primary btn-lg btn-block" disabled id="customer-form-btn" type="button">
+									Отправить заявку
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--freelancer-->
+			<div id="block-freelancer">
+				<div class="col-4 mx-auto mb-5">
+					<img class="d-block mb-7 img-fluid" src="./assets/img/logo.png" alt="логотип компании">
+				</div>
+				<div class="d-flex justify-content-between align-items-start">
+					<div class="col-9">
+						<div class="table-responsive table">
+							<table class="table table-bordered table-hover table-sm">
+								<thead class="thead-dark" id="table-thead">
+									<tr>
+										<th>#</th>
+										<th>Основная задача</th>
+										<th>Валюта</th>
+										<th class="table-column-deadline" id="table-column-deadline"
+											data-type-sort="deadline" data-is-reverse="0">
+											До дедлайна осталось
+											<span class="reset-sort-indication" id="reset-sort-indication">
+											</span>
+										</th>
+									</tr>
+								</thead>
+								<tbody id="orders"></tbody>
+							</table>
+						</div>
+					</div>
+					<div class="col-3 filter-block">
+						<p class="text-left text-info mb-4 h3">Фильтр</p>
+						<form class="h6" action="#" id="filter-form">
+							<p class="font-weight-bold text-info">Валюта</p>
+							<div class="filter-form-section-currency" id="form-input-section-currency">
+								<input class="filter-input" type="radio" name="currency" id="filter-currency-ruble"
+									value="ruble" data-field="fieldForValueRuble" checked />
+								<label for="filter-currency-ruble" class="mr-2 cursor-pointer">
+									Рубли <sup class="field-for-current-result" id="field-for-value-ruble"></sup>
+								</label>
+								<input class="filter-input" type="radio" name="currency" id="filter-currency-bucks"
+									value="bucks" data-field="fieldForValueBucks" />
+								<label for="filter-currency-bucks" class="cursor-pointer">
+									Доллары <sup class="field-for-current-result" id="field-for-value-bucks"></sup>
+								</label>
+							</div>
+							<p class="mt-4 font-weight-bold text-info">Стоимость заказа</p>
+							<div class="filter-price d-flex justify-content-between" id="filter-section-price">
+								<input type="text" class="filter-price-input-min" id="filter-price-input-min"
+									data-type-input="currentValueMin" data-input-method="usingManualInput" />
+								<div class="filter-price-slider align-self-center" id="filter-price-slider">
+									<input type="range" id="filter-price-slider-change-min" data-index-in-array="0"
+										data-input-method="usingSlider">
+									<input type="range" id="filter-price-slider-change-max" data-index-in-array="1"
+										data-input-method="usingSlider">
+								</div>
+								<input type="text" class="filter-price-input-max" id="filter-price-input-max"
+									data-type-input="currentValueMax" data-input-method="usingManualInput" />
+							</div>
+							<p class="mt-4 font-weight-bold text-info">Статус задачи</p>
+							<div class="filter-form-section-status-order" id="form-input-section-status-order">
+								<input class="filter-input filter-status-order" type="radio" name="status"
+									id="filter-status-wait" value="wait" />
+								<label for="filter-status-wait" class="mb-0 cursor-pointer">
+									Ожидает исполнителя
+								</label>
+								<input class="filter-input filter-status-order" type="radio" name="status"
+									id="filter-status-active" value="active" />
+								<label for="filter-status-active" class="mb-0 cursor-pointer">
+									В разработке
+								</label>
+								<input class="filter-input filter-status-order" type="radio" name="status"
+									id="filter-status-expired" value="expired" />
+								<label for="filter-status-expired" class="mb-0 cursor-pointer">
+									Просрочено
+								</label>
+							</div>
+							<div class="d-flex h6 justify-content-between mt-4">
+								<button type="button" class="btn btn-info"
+									id="filter-form-submit-btn">применить</button>
+								<button type="button" class="btn btn-info" id="filter-form-reset-btn">сбросить</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<button class="btn btn-info" id="btn-exit">Выход</button>
+		</div>
+	</main>
+	<!--modal-->
+
+</html>
